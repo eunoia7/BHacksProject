@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorAccent"
+    android:orientation="vertical"
+    >
+
+    <ImageView
+        android:id="@+id/profileImageId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_person_black_24dp"
+        android:paddingTop="8dp"
+        ></ImageView>
+
+    <TextView
+        android:id="@+id/profileNameId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Jyotsana Srivastava"
+        android:textColor="@color/cardview_dark_background"
+        android:textSize="25dp"/>
+
+    <TextView
+        android:id="@+id/profilePhoneNoId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="8303064565"
+        android:textColor="@color/cardview_dark_background"
+        android:textSize="15dp"/>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

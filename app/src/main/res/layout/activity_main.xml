@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/drawerId"
+    tools:openDrawer="start"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorAccent"
+            app:title="Navigation Drawer Heading"
+            app:titleTextColor="@color/cardview_light_background">
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <Button
+            android:id="@+id/emergencyButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:onClick="fakeCall"
+            android:text="Emergency" />
+
+        <Button
+            android:id="@+id/alertButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/emergencyButton"
+            android:layout_alignBottom="@+id/emergencyButton"
+            android:onClick="alertAction"
+            android:text="Alert" />
+
+        <Button
+            android:id="@+id/manualButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/emergencyButton"
+            android:layout_alignBottom="@+id/emergencyButton"
+            android:onClick="manualAlertAction"
+            android:text="Manual Alert" />
+
+        <Button
+            android:id="@+id/start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Start"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/emergencyButton"/>
+
+        <Button
+            android:id="@+id/stop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Stop"
+            android:layout_toLeftOf="@+id/start"
+            android:layout_alignBottom="@+id/start" />
+
+        <Button
+            android:id="@+id/mute"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mute"
+            android:layout_toRightOf="@+id/start"
+            android:layout_alignBottom="@+id/start"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/result_tv"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/start"/>
+
+    </RelativeLayout>
+
+    <com.google.android.material.navigation.NavigationView
+           android:layout_width="wrap_content"
+           android:layout_height="match_parent"
+           android:id="@+id/navMenuId"
+           app:menu="@menu/iconmenu"
+           app:headerLayout="@layout/navigation_header"
+           android:layout_gravity="start">
+    </com.google.android.material.navigation.NavigationView>
+    <!--
+       -->
+
+</androidx.drawerlayout.widget.DrawerLayout>
