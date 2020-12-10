@@ -45,6 +45,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //For background alert system
+        if (ContextCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.RECORD_AUDIO}, 1);
+            return;
+        }
+        startService(new Intent(getApplicationContext(),AlertService.class));
+
         toolbar = (Toolbar)findViewById(R.id.toolbarId);
         setSupportActionBar(toolbar);
 

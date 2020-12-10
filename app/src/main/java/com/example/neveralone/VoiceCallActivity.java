@@ -22,7 +22,7 @@ public class VoiceCallActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_call_reciever);
+        setContentView(R.layout.activity_voice_call);
         Log.i("Recieve call", "Reached 4");
 
         lv_endcall = (LinearLayout) findViewById(R.id.lv_endcall);
@@ -49,7 +49,7 @@ public class VoiceCallActivity extends AppCompatActivity {
     private Runnable updateTimerThread = new Runnable() {
         public void run() {
             timeInMilliseconds = SystemClock.uptimeMillis() - startTime;
-            //tv_time.setText(getDateFromMillis(timeInMilliseconds));
+            tv_time.setText(getDateFromMillis(timeInMilliseconds));
             customHandler.postDelayed(this, 1000);
         }
     };
