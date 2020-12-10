@@ -31,25 +31,23 @@ public class PeopleSecond extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_people_second);
 
+        ///*
         Toolbar tb = (Toolbar) findViewById(R.id.toolbar1);
         backButton = (ImageButton) findViewById(R.id.back);
-        // title = (TextView) findViewById(R.id.toolbar_title);
 
-        //  title.setText(R.string.welcome);
         backButton.setVisibility(View.VISIBLE);
         backButton.setImageResource(R.drawable.ic_keyboard_arrow_left_24dp);
-//    notificationIcon.setImageResource(R.drawable.notification);
-//    notificationIcon.setVisibility(View.VISIBLE);
 
         setSupportActionBar(tb);
         getSupportActionBar().setDisplayShowTitleEnabled(true);
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setCustomView(R.layout.title);
-        //  getSupportActionBar().setTitle("Help");
+          getSupportActionBar().setTitle("Help");
         TextView tv= (TextView) findViewById(R.id.ab);
-        tv.setText("Saved Contacts");
-        // Session Manager
-        session = new SessionManager(getApplicationContext());
+       tv.setText("Saved Contacts");
+       //*/
+         final SessionManager session = new SessionManager(getApplicationContext());
+
 
         // Email, Password input text
         tv1 = (TextView) findViewById(R.id.textview1);
@@ -57,10 +55,12 @@ public class PeopleSecond extends AppCompatActivity {
         tv3 = (TextView) findViewById(R.id.textview3);
         //Toast.makeText(getApplicationContext(), "User Login Status: " + session.isLoggedIn(), Toast.LENGTH_LONG).show();
 
-
+        ///*
         // Login button
         edit = (ImageButton) findViewById(R.id.edit);
+        //*/
         session.checkStatusOfContactsAdd();
+
 
         HashMap<String, String> user = session.getUserDetails();
 
@@ -76,7 +76,7 @@ public class PeopleSecond extends AppCompatActivity {
         tv2.setText(number2);
         tv3.setText(number3);
 
-
+        ///*
         // Login button click event
         edit.setOnClickListener(new View.OnClickListener() {
 
@@ -86,6 +86,7 @@ public class PeopleSecond extends AppCompatActivity {
 
             }
         });
+        //*/
 
 
 
